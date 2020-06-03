@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.GridView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -26,6 +28,8 @@ import java.util.Collections;
 
 import id.ac.umn.uas2020_mobile_dl_21498_albertwijaya_soal02.Adapter_Recyclerview;
 import id.ac.umn.uas2020_mobile_dl_21498_albertwijaya_soal02.AddActivity;
+import id.ac.umn.uas2020_mobile_dl_21498_albertwijaya_soal02.CustomGridAdapter;
+import id.ac.umn.uas2020_mobile_dl_21498_albertwijaya_soal02.CustomListAdapter;
 import id.ac.umn.uas2020_mobile_dl_21498_albertwijaya_soal02.R;
 import id.ac.umn.uas2020_mobile_dl_21498_albertwijaya_soal02.SearchActivity;
 import id.ac.umn.uas2020_mobile_dl_21498_albertwijaya_soal02.Session;
@@ -35,10 +39,13 @@ public class HomeFragment extends Fragment {
     private FloatingActionButton fab;
     User user;
     Session sharedpref;
-    RecyclerView recyclerView;
     ArrayList<User> list;
     Adapter_Recyclerview adapter;
     private TextView searchBar, tvSortAsc, tvSortDesc;
+
+    private ListView listView;
+    private GridView gridView;
+    private RecyclerView recyclerView;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -51,10 +58,26 @@ public class HomeFragment extends Fragment {
             getContext().setTheme(R.style.AppTheme);
             getActivity().getWindow().getDecorView().setBackgroundColor(Color.WHITE);
         }
+
+        listView = root.findViewById(R.id.listView);
+        gridView = root.findViewById(R.id.gridView);
         recyclerView = root.findViewById(R.id.recyclerView);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
         recyclerView.setHasFixedSize(true);
+        if (sharedpref.loadView() == 0){
+            listView.setVisibility(View.VISIBLE);
+            gridView.setVisibility(View.GONE);
+            recyclerView.setVisibility(View.GONE);
+        }else if(sharedpref.loadView() == 1){
+            listView.setVisibility(View.GONE);
+            gridView.setVisibility(View.VISIBLE);
+            recyclerView.setVisibility(View.GONE);
+        }else if(sharedpref.loadView() == 2){
+            listView.setVisibility(View.GONE);
+            gridView.setVisibility(View.GONE);
+            recyclerView.setVisibility(View.VISIBLE);
+        }
 
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference ref = database.getReference("employees");
@@ -115,9 +138,15 @@ public class HomeFragment extends Fragment {
                         list.add(user);
                         Collections.reverse(list);
                     }
-                    Adapter_Recyclerview sortAsc = new Adapter_Recyclerview(getActivity(),list);
-                    recyclerView.setAdapter(sortAsc);
-                    sortAsc.notifyDataSetChanged();
+                    CustomListAdapter customListAdapter = new CustomListAdapter(getContext(), list);
+                    listView.setAdapter(customListAdapter);
+
+                    CustomGridAdapter customGridAdapter = new CustomGridAdapter(getContext(), list);
+                    gridView.setAdapter(customGridAdapter);
+
+                    Adapter_Recyclerview sortDesc = new Adapter_Recyclerview(getActivity(),list);
+                    recyclerView.setAdapter(sortDesc);
+                    sortDesc.notifyDataSetChanged();
                 }
             }
 
@@ -139,6 +168,11 @@ public class HomeFragment extends Fragment {
                         User user = ds.getValue(User.class);
                         list.add(user);
                     }
+                    CustomListAdapter customListAdapter = new CustomListAdapter(getContext(), list);
+                    listView.setAdapter(customListAdapter);
+
+                    CustomGridAdapter customGridAdapter = new CustomGridAdapter(getContext(), list);
+                    gridView.setAdapter(customGridAdapter);
 
                     Adapter_Recyclerview sortAsc = new Adapter_Recyclerview(getActivity(),list);
                     recyclerView.setAdapter(sortAsc);

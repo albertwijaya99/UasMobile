@@ -34,12 +34,12 @@ public class DashboardFragment extends Fragment {
     private Spinner spView, spLang;
     private RelativeLayout rlAbout;
     private TextView tvDarkMode, tvViewMode, tvLanguage, tvAbout;
-    private Boolean initSpinner = true;
+    private Boolean initSpinnerLang = true;
+    private Boolean initSpinnerView = true;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         final View root = inflater.inflate(R.layout.fragment_dashboard, container, false);
-
 
         spView = root.findViewById(R.id.spViewMode);
         spLang = root.findViewById(R.id.spLanguage);
@@ -52,6 +52,34 @@ public class DashboardFragment extends Fragment {
 
         sharedpref = new Session(getContext());
 
+        if(sharedpref.loadView() == 0){
+            spView.setSelection(0);
+        }else if(sharedpref.loadView() == 1){
+            spView.setSelection(1);
+        }else if(sharedpref.loadView() == 2){
+            spView.setSelection(2);
+        }
+        spView.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+                if(initSpinnerView){
+                    initSpinnerView = false;
+                }else{
+                    if(position == 0){
+                        sharedpref.setView(0);
+                    }else if(position == 1){
+                        sharedpref.setView(1);
+                    } else if(position == 2){
+                        sharedpref.setView(2);
+                    }
+                }
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parentView) {
+                return;
+            }
+        });
+
         if(sharedpref.loadLanguage()){
             spLang.setSelection(1);
         }else {
@@ -60,8 +88,8 @@ public class DashboardFragment extends Fragment {
         spLang.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-                if(initSpinner){
-                    initSpinner = false;
+                if(initSpinnerLang){
+                    initSpinnerLang = false;
                 }else{
                     if(position == 0){
                         sharedpref.setLanguage(false);

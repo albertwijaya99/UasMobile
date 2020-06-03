@@ -22,6 +22,10 @@ public class Session {
         editor.putBoolean("lang", state);
         editor.commit();
     }
+    public void setView(int view){
+        editor.putInt("view",view);
+        editor.commit();
+    }
 
     public Boolean loadNightModeState() {
         Boolean state = prefs.getBoolean("NightMode", false);
@@ -30,6 +34,11 @@ public class Session {
 
     public Boolean loadLanguage(){
         Boolean state = prefs.getBoolean("lang", false);
+        return state;
+    }
+
+    public int loadView(){
+        int state = prefs.getInt("view", 0);
         return state;
     }
 }
