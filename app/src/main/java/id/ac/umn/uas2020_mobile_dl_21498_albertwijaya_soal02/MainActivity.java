@@ -83,22 +83,26 @@ public class MainActivity extends AppCompatActivity {
         btnLogin = findViewById(R.id.btnLogin);
 
         spLang = findViewById(R.id.spLanguage);
+        if(sharedpref.loadLanguage()){
+            spLang.setSelection(1);
+        }else {
+            spLang.setSelection(0);
+        }
         spLang.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
                 if(initSpinner){
                     initSpinner = false;
                 }else{
-
-                    Resources res = getResources();
-                    DisplayMetrics dm = res.getDisplayMetrics();
-                    Configuration conf = res.getConfiguration();
-                    if(position==0){
+                    if(position == 0){
                         sharedpref.setLanguage(false);
+                        setLocale("en");
                     }else{
                         sharedpref.setLanguage(true);
+                        setLocale("id");
                     }
-                    res.updateConfiguration(conf,dm);
+                    Intent intent = new Intent(MainActivity.this, MainActivity.class);
+                    startActivity(intent);
                 }
             }
             @Override
@@ -236,5 +240,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         moveTaskToBack(true);
+    }
+
+    public void setLocale(String lang) {
+        Locale myLocale = new Locale(lang);
+        Resources res = getResources();
+        DisplayMetrics dm = res.getDisplayMetrics();
+        Configuration conf = res.getConfiguration();
+        conf.locale = myLocale;
+        res.updateConfiguration(conf, dm);
     }
 }

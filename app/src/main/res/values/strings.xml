@@ -10,6 +10,11 @@
     <string name="password">Password</string>
     <string name="darkMode">Dark Mode</string>
     <string name="language" translatable="true">Language</string>
+    <string name="editProfile" translatable="true">Edit Profile</string>
+    <string name="Logout" translatable="true">Logout</string>
+    <string name="done" translatable="true">Done Editing</string>
+    <string name="back" translatable="true">Back</string>
+    <string name="name" translatable="true">Name</string>
 
     <!--HomeActivity-->
     <string name="title_home" translatable="true">List</string>
@@ -21,11 +26,8 @@
     <string name="register" translatable="true">Register</string>
 
     <!--RegisterActivity-->
-    <string name="name" translatable="true">Name</string>
     <string name="confirmPassword" translatable="true">Confirm Password</string>
     <string name="signUp" translatable="true">Sign Up</string>
-
-    <!--List-->
 
     <!--Settings-->
     <string name="viewMode" translatable="true">View Mode</string>
@@ -37,6 +39,25 @@
     <string name="salary" translatable="true">Salary</string>
     <string name="contact" translatable="true">Contact Me</string>
 
+    <!--AddActivity-->
+    <string name="phone">Phone Number</string>
+    <string name="position">Position</string>
+    <string name="subject">Subject</string>
+    <string name="bio">Biography</string>
+    <string name="pp" translatable="false">Upload Profile Picture</string>
+    <string name="add">Add</string>
+
+    <!--HomeFragment-->
+    <string name="search">Search</string>
+
+    <string name="aboutApp1" translatable="true">This is an employee management app, you can login, register, add employee, and edit employee.</string>
+    <string name="aboutApp2" translatable="true">Day 1: creating login, register, profile, edit profile</string>
+    <string name="aboutApp3" translatable="true">Day 2: creating setting, home view, add &amp; edit employee</string>
+    <string name="aboutApp4" translatable="true">Day 3: creating vid, txt, assessment &amp; submitting project. </string>
+    <string name="aboutApp5">Helper : Vanessa Ardelia</string>
+    <string name="aboutApp6">Up : Firebase over Room!!!!111!!!</string>
+    <string name="aboutApp7" translatable="true">Down : how to set theme Spinner??????????</string>
+    <string name="aboutApp8">Thanks</string>
     <string-array name="position">
         <item>Coordinator &amp; Lecturer</item>
         <item>Lecturer</item>

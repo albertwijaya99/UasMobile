@@ -236,7 +236,7 @@
                     android:id="@+id/btnEdit"
                     android:layout_height="wrap_content"
                     android:layout_width="match_parent"
-                    android:text="Edit Profile"
+                    android:text="@string/editProfile"
                     android:textColor="@color/colorWhite"
                     android:background="?attr/buttoncolor"/>
                 <Button
@@ -245,7 +245,7 @@
                     android:id="@+id/btnLogout"
                     android:layout_height="wrap_content"
                     android:layout_width="match_parent"
-                    android:text="Logout"
+                    android:text="@string/Logout"
                     android:textColor="@color/colorWhite"
                     android:background="?attr/buttoncolor"/>
                 <Button
@@ -254,7 +254,7 @@
                     android:id="@+id/btnDone"
                     android:layout_height="wrap_content"
                     android:layout_width="match_parent"
-                    android:text="Done Editing"
+                    android:text="@string/done"
                     android:visibility="gone"
                     android:textColor="@color/colorWhite"
                     android:background="?attr/buttoncolor"/>
@@ -264,7 +264,7 @@
                     android:id="@+id/btnBack"
                     android:layout_height="wrap_content"
                     android:layout_width="match_parent"
-                    android:text="Back"
+                    android:text="@string/back"
                     android:visibility="gone"
                     android:textColor="@color/colorWhite"
                     android:background="?attr/buttoncolor"/>

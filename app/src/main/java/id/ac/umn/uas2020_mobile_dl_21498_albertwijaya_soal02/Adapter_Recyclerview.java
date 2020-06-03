@@ -41,7 +41,6 @@ public class Adapter_Recyclerview extends RecyclerView.Adapter<Adapter_Recyclerv
         }
         holder.tvName.setText(user.get(position).getName());
         holder.tvPosition.setText(user.get(position).getPosition());
-//        Picasso.get().load(mahasiswa.get(position).getProfilePhoto()).into(holder.profilePic);
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

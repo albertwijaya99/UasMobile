@@ -1,12 +1,16 @@
 package id.ac.umn.uas2020_mobile_dl_21498_albertwijaya_soal02.ui.dashboard;
 
 import android.content.Intent;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.CompoundButton;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
@@ -16,7 +20,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import java.util.Locale;
+
 import id.ac.umn.uas2020_mobile_dl_21498_albertwijaya_soal02.HomeActivity;
+import id.ac.umn.uas2020_mobile_dl_21498_albertwijaya_soal02.MainActivity;
 import id.ac.umn.uas2020_mobile_dl_21498_albertwijaya_soal02.R;
 import id.ac.umn.uas2020_mobile_dl_21498_albertwijaya_soal02.AboutActivity;
 import id.ac.umn.uas2020_mobile_dl_21498_albertwijaya_soal02.Session;
@@ -24,9 +31,10 @@ import id.ac.umn.uas2020_mobile_dl_21498_albertwijaya_soal02.Session;
 public class DashboardFragment extends Fragment {
     private Switch swDarkMode;
     Session sharedpref;
-    private Spinner spView, spLanguage;
+    private Spinner spView, spLang;
     private RelativeLayout rlAbout;
     private TextView tvDarkMode, tvViewMode, tvLanguage, tvAbout;
+    private Boolean initSpinner = true;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -34,7 +42,7 @@ public class DashboardFragment extends Fragment {
 
 
         spView = root.findViewById(R.id.spViewMode);
-        spLanguage = root.findViewById(R.id.spLanguage);
+        spLang = root.findViewById(R.id.spLanguage);
         rlAbout = root.findViewById(R.id.rlAbout);
         tvDarkMode = root.findViewById(R.id.tvDarkMode);
         tvViewMode = root.findViewById(R.id.tvViewMode);
@@ -43,6 +51,34 @@ public class DashboardFragment extends Fragment {
         swDarkMode = root.findViewById(R.id.swDarkMode);
 
         sharedpref = new Session(getContext());
+
+        if(sharedpref.loadLanguage()){
+            spLang.setSelection(1);
+        }else {
+            spLang.setSelection(0);
+        }
+        spLang.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+                if(initSpinner){
+                    initSpinner = false;
+                }else{
+                    if(position == 0){
+                        sharedpref.setLanguage(false);
+                        setLocale("en");
+                    }else{
+                        sharedpref.setLanguage(true);
+                        setLocale("id");
+                    }
+                    Intent intent = new Intent(getActivity(), HomeActivity.class);
+                    startActivity(intent);
+                }
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parentView) {
+                return;
+            }
+        });
         if(sharedpref.loadNightModeState()) {
             swDarkMode.setChecked(true);
             getContext().setTheme(R.style.DarkTheme);
@@ -85,5 +121,13 @@ public class DashboardFragment extends Fragment {
         tvViewMode.setTextColor(color);
         tvLanguage.setTextColor(color);
         tvAbout.setTextColor(color);
+    }
+    public void setLocale(String lang) {
+        Locale myLocale = new Locale(lang);
+        Resources res = getResources();
+        DisplayMetrics dm = res.getDisplayMetrics();
+        Configuration conf = res.getConfiguration();
+        conf.locale = myLocale;
+        res.updateConfiguration(conf, dm);
     }
 }

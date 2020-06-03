@@ -18,12 +18,22 @@
     <string name="classes">Kelas yang diajar</string>
     <string name="salary">Gaji</string>
     <string name="contact">Hubungi Saya</string>
-
-    <string-array name="position">
-        <item>Koordinator &amp; Dosen</item>
-        <item>Dosen</item>
-        <item>Kepala Lab</item>
-        <item>Koordinator Lab</item>
-        <item>Asisten Lab</item>
-    </string-array>
+    <string name="aboutApp1">Ini adalah aplikasi tentang menejemen karyawan.</string>
+    <string name="aboutApp2">Hari 1: bikin login, daftar, profil &amp; editProfil</string>
+    <string name="aboutApp3">Hari 2: bikin setting, home, add &amp; edit karyawan</string>
+    <string name="aboutApp4">Hari 3: bikin vid, txt, &amp; assessment</string>
+    <string name="aboutApp6" translatable="false">Gak pake Room!!!!111!!!</string>
+    <string name="aboutApp7">Cara edit theme buat spinner gmn??????????</string>
+    <string name="aboutApp5">Yang bantuin : Vanessa Ardelia</string>
+    <string name="aboutApp8" translatable="false">Makasi</string>
+    <string name="editProfile">Ubah Profil</string>
+    <string name="Logout">Keluar</string>
+    <string name="done">Selesai Ubah</string>
+    <string name="back">Kembali</string>
+    <string name="phone">Nomor Telepon</string>
+    <string name="position">Posisi</string>
+    <string name="subject">Kelas</string>
+    <string name="bio">Biografi</string>
+    <string name="add">Tambah</string>
+    <string name="search">Cari</string>
 </resources>

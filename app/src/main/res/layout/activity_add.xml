@@ -72,7 +72,7 @@
                         android:layout_marginEnd="30dp"
                         android:backgroundTint="?attr/tintcolor"
                         android:drawablePadding="10dp"
-                        android:hint="Phone"
+                        android:hint="@string/phone"
                         android:inputType="phone"
                         android:textColor="?attr/textcolor" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -91,9 +91,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:drawablePadding="10dp"
-                        android:text="position"
+                        android:text="@string/position"
                         android:textColor="?attr/textcolor"
-                        android:textSize="18dp" />
+                        android:textSize="20sp" />
 
                     <Spinner
                         android:id="@+id/spPosition"
@@ -116,34 +116,8 @@
                         android:layout_marginEnd="30dp"
                         android:backgroundTint="?attr/tintcolor"
                         android:drawablePadding="10dp"
-                        android:hint="Subject"
+                        android:hint="@string/subject"
                         android:textColor="?attr/textcolor" />
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="34dp"
-                        android:layout_marginTop="25dp"
-                        android:layout_marginEnd="34dp"
-                        android:layout_marginBottom="5dp"
-                        android:orientation="horizontal">
-
-                        <Button
-                            android:id="@+id/btnProfile"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="?attr/buttoncolor"
-                            android:text="Add Profile"
-                            android:textColor="@color/colorWhite" />
-
-                        <TextView
-                            android:id="@+id/tvProfile"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentEnd="true"
-                            android:textColor="?attr/textcolor"
-                            android:textSize="20sp" />
-                    </RelativeLayout>
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <LinearLayout
@@ -229,21 +203,46 @@
                         android:layout_marginEnd="30dp"
                         android:backgroundTint="?attr/tintcolor"
                         android:drawablePadding="10dp"
-                        android:hint="Bio"
+                        android:hint="@string/bio"
                         android:textColor="?attr/textcolor" />
                 </com.google.android.material.textfield.TextInputLayout>
 
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="34dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginEnd="34dp"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btnProfile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/buttoncolor"
+                        android:text="@string/pp"
+                        android:textColor="@color/colorWhite" />
+
+                    <TextView
+                        android:id="@+id/tvProfile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:textColor="?attr/textcolor"
+                        android:textSize="20sp" />
+                </RelativeLayout>
                 <Button
                     android:id="@+id/btnRegister"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginStart="30dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="20dp"
                     android:layout_marginEnd="30dp"
                     android:layout_marginBottom="10dp"
                     android:background="?attr/buttoncolor"
-                    android:text="Add"
+                    android:text="@string/add"
                     android:textColor="@color/colorWhite" />
 
                 <Button
@@ -254,11 +253,10 @@
                     android:layout_marginStart="30dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginEnd="30dp"
+                    android:layout_marginBottom="10dp"
                     android:background="?attr/buttoncolor"
-                    android:text="Cancel"
+                    android:text="@string/back"
                     android:textColor="@color/colorWhite" />
-
-
             </LinearLayout>
         </ScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>
