@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "105653300711",
+    "firebase_url": "https://aslab-68047.firebaseio.com",
+    "project_id": "aslab-68047",
+    "storage_bucket": "aslab-68047.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:105653300711:android:60d7213281fb43dbe3a142",
+        "android_client_info": {
+          "package_name": "id.ac.umn.uas2020_mobile_dl_21498_albertwijaya_soal02"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "105653300711-4mal6lvmiaihbon491t5r3uunchl4tbl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "id.ac.umn.uas2020_mobile_dl_21498_albertwijaya_soal02",
+            "certificate_hash": "4d78360f0053d22d1cb60aedcdeaeb26fca778e9"
+          }
+        },
+        {
+          "client_id": "105653300711-2d5lgfp9s056ns594a0ri4n8b8ao8dgj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBW6X9PmKJxGoGY2Jf_eM7WAqgTJq2-LUI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "105653300711-2d5lgfp9s056ns594a0ri4n8b8ao8dgj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

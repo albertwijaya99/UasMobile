@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">UAS2020_MOBILE-DL_21498_AlbertWijaya_Soal02</string>
+    <string name="password">Kata Sandi</string>
+    <string name="darkMode">Mode Gelap</string>
+    <string name="language">Bahasa</string>
+    <string name="title_home">Daftar</string>
+    <string name="title_dashboard">Pengaturan</string>
+    <string name="title_notifications">Profil</string>
+    <string name="signIn">Masuk</string>
+    <string name="register">Daftar</string>
+    <string name="name">Nama</string>
+    <string name="confirmPassword">Konfirmasi Kata Sandi</string>
+    <string name="signUp">Daftar</string>
+    <string name="viewMode">Mode View</string>
+    <string name="about">Tentang App</string>
+    <string name="oblTo">Atasan</string>
+    <string name="classes">Kelas yang diajar</string>
+    <string name="salary">Gaji</string>
+    <string name="contact">Hubungi Saya</string>
+
+    <string-array name="position">
+        <item>Koordinator &amp; Dosen</item>
+        <item>Dosen</item>
+        <item>Kepala Lab</item>
+        <item>Koordinator Lab</item>
+        <item>Asisten Lab</item>
+    </string-array>
+</resources>

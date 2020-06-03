@@ -1,0 +1,58 @@
+<resources>
+    <string name="app_name">UAS2020_MOBILE-DL_21498_AlbertWijaya_Soal02</string>
+    <string name="title_activity_home2" translatable="false">MainActivity</string>
+    <string name="title_activity_real" translatable="false">MainActivity</string>
+    <string name="title_activity_main2" translatable="false">MainActivity</string>
+    <string name="title_activity_home" translatable="false">MainActivity</string>
+
+    <!--Multiple Use-->
+    <string name="email" translatable="false">Email</string>
+    <string name="password">Password</string>
+    <string name="darkMode">Dark Mode</string>
+    <string name="language" translatable="true">Language</string>
+
+    <!--HomeActivity-->
+    <string name="title_home" translatable="true">List</string>
+    <string name="title_dashboard" translatable="true">Settings</string>
+    <string name="title_notifications" translatable="true">Profile</string>
+
+    <!--MainActivity-->
+    <string name="signIn" translatable="true">Sign in</string>
+    <string name="register" translatable="true">Register</string>
+
+    <!--RegisterActivity-->
+    <string name="name" translatable="true">Name</string>
+    <string name="confirmPassword" translatable="true">Confirm Password</string>
+    <string name="signUp" translatable="true">Sign Up</string>
+
+    <!--List-->
+
+    <!--Settings-->
+    <string name="viewMode" translatable="true">View Mode</string>
+    <string name="about" translatable="true">About App</string>
+
+    <!--Profile-->
+    <string name="oblTo" translatable="true">Obligated To</string>
+    <string name="classes" translatable="true">Class(es) I teach</string>
+    <string name="salary" translatable="true">Salary</string>
+    <string name="contact" translatable="true">Contact Me</string>
+
+    <string-array name="position">
+        <item>Coordinator &amp; Lecturer</item>
+        <item>Lecturer</item>
+        <item>Head of Lab</item>
+        <item>Lab Coordinator</item>
+        <item>Lab Assistant</item>
+    </string-array>
+
+    <string-array name="view">
+        <item>List</item>
+        <item>Grid</item>
+        <item>Card</item>
+    </string-array>
+
+    <string-array name="language">
+        <item>English</item>
+        <item>Indonesia</item>
+    </string-array>
+</resources>
