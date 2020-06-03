@@ -78,30 +78,32 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
 
-                <RelativeLayout
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="34dp"
                     android:layout_marginTop="25dp"
                     android:layout_marginEnd="34dp"
-                    android:layout_marginBottom="5dp"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:weightSum="2">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:drawablePadding="10dp"
                         android:text="@string/position"
                         android:textColor="?attr/textcolor"
-                        android:textSize="20sp" />
+                        android:textSize="20sp"
+                        android:layout_weight="1"/>
 
                     <Spinner
                         android:id="@+id/spPosition"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
-                        android:entries="@array/position" />
-                </RelativeLayout>
+                        android:entries="@array/position"
+                        android:layout_weight="1"/>
+                </LinearLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"

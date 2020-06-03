@@ -111,7 +111,7 @@ public class UserDetailActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         mDatabase = FirebaseDatabase.getInstance().getReference("employees");
-        mStorageRef = FirebaseStorage.getInstance().getReference().child("profilePicture/" + user.getEmail().toString());
+        mStorageRef = FirebaseStorage.getInstance().getReference().child("profilePicture/" + user.getName().toString());
 
         btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -209,7 +209,7 @@ public class UserDetailActivity extends AppCompatActivity {
                 handler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        mDatabase.child(user.getEmail()).setValue(user);
+                        mDatabase.child(user.getName()).setValue(user);
                     }
                 }, 5000);
                 viewMode();

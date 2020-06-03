@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -160,11 +161,11 @@ public class AddActivity extends AppCompatActivity {
                 }
 
                 if(valid){
-                    mStorageRef = FirebaseStorage.getInstance().getReference().child("profilePicture/" + email);
+                    mStorageRef = FirebaseStorage.getInstance().getReference().child("profilePicture/" + name);
                     user = new User(name, position, subject, bio, oblTo, classes, salary, email, phone,"");
                     if(!(uploadTask!=null && uploadTask.isInProgress())){
                         if(!filePath.toString().equals("")){
-                            final StorageReference ref = mStorageRef.child(email);
+                            final StorageReference ref = mStorageRef.child(name);
                             uploadTask = ref.putFile(filePath);
 
                             uploadTask.addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
@@ -174,6 +175,7 @@ public class AddActivity extends AppCompatActivity {
                                         @Override
                                         public void onSuccess(Uri uri) {
                                             user.setUri(uri.toString());
+                                            Log.d("asd", user.getUri().toString());
                                         }
                                     });
                                 }
@@ -184,9 +186,15 @@ public class AddActivity extends AppCompatActivity {
                             });
                         }
                     }
-                    mDatabase.child(email).setValue(user);
-                    Intent intent = new Intent(AddActivity.this, HomeActivity.class);
-                    startActivity(intent);
+                    Handler handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            mDatabase.child(name).setValue(user);
+                            Intent intent = new Intent(AddActivity.this, HomeActivity.class);
+                            startActivity(intent);
+                        }
+                    }, 5000);
                 }
             }
         });
